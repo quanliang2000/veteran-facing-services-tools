@@ -16,26 +16,22 @@ module.exports = {
               name: '2. Access internal tools',
               href: '/getting-started/internal-tools',
             },
+            {
+              name: '3. Leverage CI workflow',
+              href: '/getting-started/workflow',
+            },
           ],
         },
         {
-          name: 'VA.gov workflow',
+          name: 'Project and environment structure',
           items: [
             {
-              name: 'Overview',
-              href: '/getting-started/workflow/overview',
+              name: 'VA.gov environments',
+              href: '/getting-started/environments',
             },
             {
-              name: 'Write',
-              href: '/getting-started/workflow/write',
-            },
-            {
-              name: 'Review',
-              href: '/getting-started/workflow/review',
-            },
-            {
-              name: 'Deploy',
-              href: '/getting-started/workflow/deploy',
+              name: 'Bundles and Code organization',
+              href: '/getting-started/bundles-and-code-organization',
             },
           ],
         },
@@ -43,15 +39,24 @@ module.exports = {
           name: 'Common tasks',
           items: [
             {
-              name: 'Run and build VA.gov',
-              href: '/getting-started/common-tasks/run-build',
+              name: 'Running VA.gov locally',
+              href: '/getting-started/common-tasks/local',
             },
             {
-              name: 'Run tests',
-              href: '/getting-started/common-tasks/test',
+              name: 'Building VA.gov',
+              href: '/getting-started/common-tasks/build',
+            },
+            {
+              name: 'Running tests',
+              href: '/getting-started/common-tasks/tests',
+            },
+            {
+              name: 'Linting your code',
+              href: '/getting-started/common-tasks/lint',
             },
             {
               name: 'Creating a new React application',
+              href: '/getting-started/common-tasks/new-app',
             },
             {
               name: 'Writing a unit test',
@@ -65,7 +70,40 @@ module.exports = {
               name: 'Updating Formation',
               // href: '/getting-started/common-tasks/update-formation'
             },
+            {
+              name: 'Releases',
+              href: '/getting-started/common-tasks/releases',
+            },
+            {
+              name: 'Reviewing feature branches',
+              href: '/getting-started/common-tasks/reviewing-feature-branches',
+            },
+            {
+              name: 'Documentation',
+              items: [
+                {
+                  name: 'Adding new pages to this site',
+                  href: '/getting-started/common-tasks/doc-page',
+                },
+                {
+                  name: 'Adding pages from Github to this site',
+                  href: '/getting-started/common-tasks/external-doc-page',
+                },
+                {
+                  name: 'Add Graphs to MDX',
+                  href: '/getting-started/common-tasks/add-graphs-to-mdx',
+                },
+                {
+                  name: 'Creating A Gatsby Plugin',
+                  href: '/getting-started/common-tasks/creating-gatsby-plugins',
+                },
+              ],
+            },
           ],
+        },
+        {
+          name: 'Standards and conventions',
+          items: [],
         },
       ],
     },
@@ -97,14 +135,6 @@ module.exports = {
             {
               name: 'Client overview',
               href: '/architecture/site-structure/client-overview',
-            },
-            {
-              name: 'VA.gov environments',
-              href: 'architecture/site-structure/environments',
-            },
-            {
-              name: 'Bundles and code organization',
-              href: 'architecture/site-structure/bundles-and-code-organization',
             },
             {
               name: 'Styling',
@@ -229,29 +259,6 @@ module.exports = {
         {
           name: 'Monitoring',
           items: [],
-        },
-      ],
-    },
-    {
-      id: 'documentation',
-      name: 'Documentation guide',
-      href: '/documentation-guide',
-      items: [
-        {
-          name: 'Adding new pages to this site',
-          href: '/documentation-guide/doc-page',
-        },
-        {
-          name: 'Adding pages from Github to this site',
-          href: '/documentation-guide/external-doc-page',
-        },
-        {
-          name: 'Add graphs to MDX',
-          href: '/documentation-guide/add-graphs-to-mdx',
-        },
-        {
-          name: 'Creating a Gatsby plugin',
-          href: '/documentation-guide/creating-gatsby-plugins',
         },
       ],
     },
