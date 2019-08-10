@@ -476,6 +476,47 @@ formConfig = {
 };
 ```
 
+### Adding/overriding submission-successful event properties
+To add an event property, or override an existing one, for the **[form-tracking-prefix]--submission-successful** Google Analytics event, you can override forms-system’s default submitForm() function \[see vets-website’s /src/platform/forms-system/src/js/actions.js\] with your own custom submit function in your **form.js formConfig**, using the **submit** property:
+
+```
+// form.js
+import _ from 'lodash';  // Import as needed.
+
+...
+
+formConfig = {
+  ...
+  // Override default submitForm().
+  submit: (form, formConfig) => {
+    // Same transform logic here as forms-system’s default submitForm().
+    const body = formConfig.transformForSubmit
+      ? formConfig.transformForSubmit(formConfig, form)
+      : transformForSubmit(formConfig, form);
+
+    // Add new (or override default) --submission-success GA-event properties.
+    // Prop value can be string, boolean, or function returning string/boolean.
+    const customSubmissionTrackingProps = {
+      'my-new-prop-key': 'my-new-value',
+      'my-new-prop2-key': true,
+      'existing-prop-key': _.get(form, data.key, ''),
+    };
+
+    // forms-system’s submitToUrl() contains the recordEvent() call,
+    // which will merge the custom event-props into its default event object.
+    return submitToUrl(
+      body,
+      formConfig.submitUrl,
+      formConfig.trackingPrefix,
+      customSubmissionTrackingProps, // Optional parameter.
+    );
+  },
+  ...
+};
+```
+
+You can also save your custom submit function in an external JS file, and import into form.js to be referenced by formConfig.submit.
+
 ## Usage guidelines
 
 Web applications can fail for many reasons, including bad Internet connections, outdated browsers, and misbehaved browser extensions. Even if you test thoroughly, users may experience frustrating errors that they do not or cannot report. We highly recommend that you use an error-reporting and/or event-reporting service to track the use of your forms. Examples of services that could be used are Google Analytics, Errorception, Sentry, Airbrake, and Raygun.
