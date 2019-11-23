@@ -245,7 +245,7 @@ $units:(
 // Grid columns
 //===================================
 $grid-columns: 12 !default;
-
+$column-gutter: rem-calc(30) !default;
 
 //====================================
 // Asset path overrides

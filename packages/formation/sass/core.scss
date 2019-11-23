@@ -6,13 +6,14 @@
 @import "~uswds/src/stylesheets/lib/neat";
 @import "~uswds/src/stylesheets/lib/normalize"; // Currently 3.0.3
 
-@import "~foundation-sites/scss/foundation/components/grid";
-@import "~foundation-sites/scss/foundation/components/block-grid";
+// @import "~foundation-sites/scss/foundation/components/grid";
+// @import "~foundation-sites/scss/foundation/components/block-grid";
 
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
-@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/variables";
+// @import "~@fortawesome/fontawesome-free/scss/fontawesome";
+// @import "~@fortawesome/fontawesome-free/scss/solid";
+// @import "~@fortawesome/fontawesome-free/scss/brands";
+// @import "~@fortawesome/fontawesome-free/scss/regular";
 
 // ============ SETTINGS ============//
 // Order matters here! Please don't change it.
