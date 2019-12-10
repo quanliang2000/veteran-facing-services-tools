@@ -1,0 +1,47 @@
+---
+title: Documented decisions - Web-Fonts
+---
+
+# WEB-FONTS IMPROVEMENTS
+
+| | | | |
+| --- | --- | --- | --- |
+|**Decision Made:**|No| **Decision Date:** | Winter 2019 |
+
+### **GOALS**
+
+- Improving First Contentful Paint
+- Improve loading time
+
+**Decision Maker:** @jhonnyoddball and @rianfowler
+
+---
+
+### **PROPOSED SOLUTIONS**
+
+- Adding `font-display: swap;` to all webfonts to remove FOIT (Flash of Invisible Text)
+- Splitting the webfonts into their own css and adding them to the head before the main css
+- Inline the webfonts into the css
+- Encoding the fonts on base64
+- Remove hashing from the font names
+- Preloading the fonts (hard-coded the 4 needed on the header or dynamically, but can run into problems if they are more than 5 fonts per application)
+- Use of [Font Face Observer](https://github.com/bramstein/fontfaceobserver)
+
+---
+
+### **CASE STUDIES AND DOCUMENTATION**
+
+https://github.com/department-of-veterans-affairs/va.gov-team/issues/1676
+
+---
+
+### **SUMMARY**
+
+#### Adding `font-display: swap;`
+
+
+---
+
+### **DECISION**
+
+
