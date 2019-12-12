@@ -60,7 +60,7 @@ const getDirectoryAndCreateNode = async ({ owner, repo, dir }, createNode) => {
             .update(object.text)
             .digest('hex'),
           mediaType: 'text/markdown',
-          content: object.text,
+          content: object.text.split('<hr>').join('<hr/>'),
           directory: path.dirname(dir),
           name: name.replace('.md', ''),
         },
