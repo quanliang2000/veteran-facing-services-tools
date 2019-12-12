@@ -30,7 +30,7 @@ export default class ModuleComponentsLayout extends Component {
     const { displayName, docblock } = data.componentMetadata;
     const jsDocBlock = docblock;
     const jsDockBlocks = jsDocBlock.split(/\r?\n/);
-    const mdxCodeBlock = data.mdx.code.body;
+    const mdxCodeBlock = data.mdx.code.body.replace(/<hr>/g, '<hr/>');
     // Window is not available during build, so this was added deal with making
     // window available to some components.
     // Tried to add it to componentDidMount but it didn't work correctly.
