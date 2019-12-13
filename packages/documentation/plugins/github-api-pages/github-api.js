@@ -60,7 +60,7 @@ const getDirectoryAndCreateNode = async ({ owner, repo, dir }, createNode) => {
             .update(object.text)
             .digest('hex'),
           mediaType: 'text/markdown',
-          content: object.text.split('<hr>').join('<hr/>'),
+          content: object.text.split('<hr>').join(''),
           directory: path.dirname(dir),
           name: name.replace('.md', ''),
         },
@@ -97,7 +97,7 @@ const getPageAndCreateNode = async ({ owner, repo, dir }, createNode) => {
         .update(text)
         .digest('hex'),
       mediaType: 'text/markdown',
-      content: text.split('<hr>').join('<hr/>'),
+      content: text.split('<hr>').join(''),
       directory: path.dirname(dir),
       name: path.basename(dir, '.md'),
     },
