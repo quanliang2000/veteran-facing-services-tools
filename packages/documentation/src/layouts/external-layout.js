@@ -4,6 +4,10 @@ import { graphql } from 'gatsby';
 
 import SidebarLayout from './SidebarLayout';
 
+function sanitize(html) {
+  return html.split('<hr>').join('');
+}
+
 export default class ExternalLayout extends Component {
   render() {
     const { data, location } = this.props;
@@ -12,7 +16,7 @@ export default class ExternalLayout extends Component {
       <SidebarLayout location={location}>
         <div
           className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+          dangerouslySetInnerHTML={{ __html: sanitize(data.markdownRemark.html) }}
         />
       </SidebarLayout>
     );
