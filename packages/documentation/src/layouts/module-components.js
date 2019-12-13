@@ -8,6 +8,10 @@ import SidebarLayout from './SidebarLayout';
 import PropsTable from '../components/propstable';
 import './module-components.scss';
 
+function sanitize(html) {
+  return html.split('<hr>').join('');
+}
+
 const MyCodeComponent = ({ children }) => (
   <LiveProvider code={children}>
     <LiveEditor />
@@ -30,7 +34,7 @@ export default class ModuleComponentsLayout extends Component {
     const { displayName, docblock } = data.componentMetadata;
     const jsDocBlock = docblock;
     const jsDockBlocks = jsDocBlock.split(/\r?\n/);
-    const mdxCodeBlock = data.mdx.code.body;
+    const mdxCodeBlock = sanitize(data.mdx.code.body);
     // Window is not available during build, so this was added deal with making
     // window available to some components.
     // Tried to add it to componentDidMount but it didn't work correctly.
