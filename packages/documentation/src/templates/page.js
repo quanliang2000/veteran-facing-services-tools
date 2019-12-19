@@ -2,11 +2,15 @@ import React from 'react';
 
 import SidebarLayout from '../layouts/SidebarLayout';
 
+function sanitize(html) {
+  return html.split('<hr>').join('');
+}
+
 export default ({ location, pageContext }) => {
   const { html, sourceUrl } = pageContext;
 
   // eslint-disable-next-line react/no-danger
-  const content = <div dangerouslySetInnerHTML={{ __html: html }} />;
+  const content = <div dangerouslySetInnerHTML={{ __html: sanitize(html) }} />;
 
   return (
     <SidebarLayout location={location}>
