@@ -8,7 +8,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     ...node,
     internal: {
       ...node.internal,
-      content: node.content.spit('<hr>').join('')
+      content: node.internal.content.spit('<hr>').join('')
     }
   }
 
