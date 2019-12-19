@@ -1,6 +1,17 @@
 const path = require('path');
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
+
+  console.log(node)
+
+  const nodeOverride = {
+    ...node,
+    internal: {
+      ...node.internal,
+      content: node.content.spit('<hr>').join('')
+    }
+  }
+
   const { createNodeField } = actions;
   const parent = getNode(node.parent);
 
@@ -8,20 +19,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     if (parent.name) {
       if (parent.name === 'index') {
         createNodeField({
-          node,
+          node: nodeOverride,
           name: `slug`,
           value: `/`,
         });
       } else {
         createNodeField({
-          node,
+          node: nodeOverride,
           name: `slug`,
           value: `/${parent.name.toLowerCase()}/`,
         });
       }
 
       createNodeField({
-        node,
+        node: nodeOverride,
         name: `sourceInstanceName`,
         value: `${parent.sourceInstanceName}`,
       });
