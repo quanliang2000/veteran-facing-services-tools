@@ -79,14 +79,13 @@ class SortableTable extends Component {
 
     return (
       <th key={field.value}>
-        <a
+        <button
           onClick={this.onHeaderClick(field.value, nextSortOrder)}
-          role="button"
           tabIndex="0"
         >
           {field.label}
           {sortIcon}
-        </a>
+        </button>
       </th>
     );
   };
